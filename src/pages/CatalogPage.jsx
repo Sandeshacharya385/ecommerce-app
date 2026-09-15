@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ProductCard from '../components/ProductCard'
 
 function CatalogPage() {
   const [products, setProducts] = useState([])
@@ -29,19 +30,17 @@ function CatalogPage() {
 
   if (error) {
     return <p>Error: {error}</p>
-  }
 
+  }
 
   return (
     <div>
       <h1>Catalog Page</h1>
-      <ul>
+      <div className="product-grid">
         {products.map((product) => (
-          <li key={product.id}>
-            {product.title} — ${product.price}
-          </li>
+          <ProductCard key={product.id} product={product} />
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
