@@ -46,5 +46,12 @@ npm run dev
 - No pagination — all products from the API load at once.
 - No checkout/payment flow — this is a catalog and cart demo only, as specified in the assignment.
 
+- Cart contents are not persisted with localStorage — the cart resets on a page refresh.
+
+- Cart contents persist across page refreshes using localStorage
+
+
+
+
 ## Author
 Sandesh Acharya
