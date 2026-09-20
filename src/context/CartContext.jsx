@@ -1,9 +1,16 @@
-import { createContext, useState, useContext } from 'react'
+import { createContext, useState, useContext, useEffect } from 'react'
 
 const CartContext = createContext()
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem('cartItems')
+    return savedCart ? JSON.parse(savedCart) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  }, [cartItems])
 
   function addToCart(product) {
     setCartItems((prevItems) => {
@@ -30,7 +37,6 @@ export function CartProvider({ children }) {
       prevItems.map((item) =>
         item.id === productId ? { ...item, quantity: newQuantity } : item
       )
-
     )
   }
 
