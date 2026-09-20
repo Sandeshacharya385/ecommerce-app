@@ -8,7 +8,7 @@ function CartPage() {
 
   if (cartItems.length === 0) {
     return (
-      <div>
+      <div className="cart-empty">
         <h1>Your Cart</h1>
         <p>Your cart is empty.</p>
         <Link to="/">Browse the catalog</Link>
