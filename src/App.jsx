@@ -3,6 +3,7 @@ import { CartProvider } from './context/CartContext'
 import Navbar from './components/Navbar'
 import CatalogPage from './pages/CatalogPage'
 import CartPage from './pages/CartPage'
+import './App.css'
 
 function App() {
   return (
