@@ -117,3 +117,23 @@ h1 {
   font-size: 0.9rem;
   margin: 0 0
 }
+
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  padding: 0 2rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.filter-bar input {
+  flex: 1;
+  min-width: 200px;
+}
