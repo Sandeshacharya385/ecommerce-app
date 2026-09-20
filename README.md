@@ -1,16 +1,50 @@
-# React + Vite
+# Mini E-Commerce Product Catalog & Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simplified storefront built with React where users can browse a product catalog, search and filter items by category, and manage a shopping cart with live quantity updates and a running total. All product data comes from a public API — no real payments are processed.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Product catalog fetched live from FakeStoreAPI
+- Search products by name
+- Filter products by category
+- Add items to cart, adjust quantities with +/- controls, or remove them
+- Running cart total and item count, visible in the navbar
+- Client-side routing between Catalog and Cart pages using React Router
+- Loading, error, and empty states handled on both the Catalog and Cart pages
+- Responsive layout that adapts to desktop and mobile widths
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (functional components + hooks: useState, useEffect, useContext)
+- React Router (react-router-dom)
+- React Context API for shared cart state across pages
+- FakeStoreAPI (https://fakestoreapi.com) for product data
+- Vite as the build tool and dev server
+- Plain CSS for styling
 
-## Expanding the Oxlint configuration
+## Setup Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+1. Clone this repository:
+git clone https://github.com/Sandeshacharya385/ecommerce-app.git
+2. Navigate into the project folder:
+cd ecommerce-app
+3. Install dependencies:
+npm install
+4. Start the development server:
+npm run dev
+5. Open the URL shown in the terminal (typically http://localhost:5173) in your browser.
+
+## Screenshots
+
+![Catalog page](./screenshots/catalog.png)
+![Cart with items](./screenshots/cart_items.png)
+![Empty cart](./screenshots/empty_cart.png)
+
+## Known Limitations
+
+- Cart contents are not persisted with localStorage — the cart resets on a page refresh.
+- No pagination — all products from the API load at once.
+- No checkout/payment flow — this is a catalog and cart demo only, as specified in the assignment.
+
+## Author
+Sandesh Acharya
